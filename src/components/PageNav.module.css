@@ -1,0 +1,10 @@
+.nav {
+  background-color: red;
+}
+
+/* Never use a selector element by itself, always use some form of the component with it like below */
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}

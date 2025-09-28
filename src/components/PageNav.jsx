@@ -1,8 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"; // NavLink adds an active class to the nav link when selected, which a normal Link doesnt do
+import styles from "./PageNav.module.css";
 
 function PageNav() {
   return (
-    <nav>
+    <nav className={styles.nav}>
       <ul>
         <li>
           <NavLink to="/">Home</NavLink>
