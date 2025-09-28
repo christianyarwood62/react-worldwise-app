@@ -8,3 +8,8 @@
   display: flex;
   justify-content: space-between;
 }
+
+/* use the :global part because css modules will add random string to classname and so without it, it wont add this class */
+.nav :global(.active) {
+  background-color: green;
+}
