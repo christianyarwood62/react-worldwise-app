@@ -46,7 +46,7 @@ function App() {
             path="cities"
             element={<CityList cities={cities} isLoading={isLoading} />}
           />
-          {/* the id in the path can be named anything, this determines what the key in the object is. */}
+          {/* the id in the path can be named anything, this determines what the key in the object is in City.jsx where useParams() is used */}
           <Route path="cities/:id" element={<City />} />
           <Route
             path="countries"
