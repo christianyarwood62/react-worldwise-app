@@ -42,7 +42,10 @@ function App() {
         <Route path="pricing" element={<Pricing />} />
         <Route path="login" element={<Login />} />
         <Route path="app" element={<AppLayout />}>
-          <Route index element={<p>LIST</p>} />
+          <Route
+            index
+            element={<CityList cities={cities} isLoading={isLoading} />}
+          />
           <Route
             path="cities"
             element={<CityList cities={cities} isLoading={isLoading} />}
