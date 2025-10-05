@@ -31,7 +31,8 @@ function City() {
       <h1>City {id}</h1>
       <p1>
         Position: {lat}, {lng}
-      </p1>{" "}
+      </p1>
+      <button onCa></button>
     </>
   );
 
