@@ -19,8 +19,8 @@ function Map() {
   const { cities } = useCities();
   const [searchParams] = useSearchParams();
   const {
-    isLoading: isLoadingPosition,
-    position: getlocationPosition,
+    isLoading: isLoadingPosition, // This takes isLoading from useGelocation and renames it
+    position: geolocationPosition,
     getPosition,
   } = useGeolocation();
 
@@ -32,6 +32,14 @@ function Map() {
       if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);
     },
     [mapLat, mapLng]
+  );
+
+  useEffect(
+    function () {
+      if (geolocationPosition)
+        setMapPosition([geolocationPosition.lat, geolocationPosition.lng]);
+    },
+    [geolocationPosition]
   );
 
   return (
