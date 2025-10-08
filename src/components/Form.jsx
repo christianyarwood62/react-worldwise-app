@@ -82,7 +82,8 @@ function Form() {
       {" "}
       {/* onsubmit fires whenever a button is clicked, but in our BackButton component, I specifically prevented default action to avoid this */}
       <div className={styles.row}>
-        <label htmlFor="cityName">City name</label>
+        <label htmlFor="cityName">City name</label>{" "}
+        {/* htmlFor selects the element with the same id */}
         <input
           id="cityName"
           onChange={(e) => setCityName(e.target.value)}
@@ -91,14 +92,19 @@ function Form() {
         <span className={styles.flag}>{emoji}</span>
       </div>
       <div className={styles.row}>
-        <label htmlFor="date">When did you go to {cityName}?</label>
+        <label htmlFor="date">When did you go to {cityName}?</label>{" "}
+        {/* htmlFor selects the element with the same id */}
         {/* <input
           id="date"
           onChange={(e) => setDate(e.target.value)}
           value={date}
         /> */}
-
-        <DatePicker />
+        <DatePicker
+          id="date"
+          onChange={(date) => setDate(date)}
+          selected={date}
+          dateFormat="dd/MM/yyyy"
+        />
       </div>
       <div className={styles.row}>
         <label htmlFor="notes">Notes about your trip to {cityName}</label>
