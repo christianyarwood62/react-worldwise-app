@@ -1,6 +1,8 @@
 // "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=0&longitude=0"
 
 import { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 import styles from "./Form.module.css";
 
@@ -34,6 +36,8 @@ function Form() {
 
   useEffect(
     function () {
+      if (!lat && !lng) return; // results in no HTTP request when going to form originally
+
       async function fetchCityData() {
         try {
           setIsLoadingGeocoding(true);
@@ -62,12 +66,21 @@ function Form() {
     [lat, lng]
   );
 
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
   if (isLoadingGeocoding) return <Spinner />;
+
+  if (!lat && !lng)
+    return <Message message="start by clicking on somwhere on the map" />; // Shows on startup of form page
 
   if (geocodingError) return <Message message={geocodingError} />;
 
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit}>
+      {" "}
+      {/* onsubmit fires whenever a button is clicked, but in our BackButton component, I specifically prevented default action to avoid this */}
       <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input
@@ -77,16 +90,16 @@ function Form() {
         />
         <span className={styles.flag}>{emoji}</span>
       </div>
-
       <div className={styles.row}>
         <label htmlFor="date">When did you go to {cityName}?</label>
-        <input
+        {/* <input
           id="date"
           onChange={(e) => setDate(e.target.value)}
           value={date}
-        />
-      </div>
+        /> */}
 
+        <DatePicker />
+      </div>
       <div className={styles.row}>
         <label htmlFor="notes">Notes about your trip to {cityName}</label>
         <textarea
@@ -95,7 +108,6 @@ function Form() {
           value={notes}
         />
       </div>
-
       <div className={styles.buttons}>
         <Button type="primary">Add</Button>
         <BackButton />
