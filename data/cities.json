@@ -37,16 +37,52 @@
       "id": 98443197
     },
     {
-      "cityName": "Vallanca",
+      "cityName": "Leache",
       "country": "Spain",
       "emoji": "🇪🇸",
-      "date": "2025-10-08T13:56:13.906Z",
+      "date": "2025-10-13T09:23:19.421Z",
       "notes": "",
       "position": {
-        "lat": "40.06125658140474",
-        "lng": "-1.34033203125"
+        "lat": "42.601619944327965",
+        "lng": "-1.40625"
       },
-      "id": 98443198
+      "id": 98443199
+    },
+    {
+      "cityName": "La Chapelle-Baloue",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2025-10-13T09:28:05.297Z",
+      "notes": "",
+      "position": {
+        "lat": "46.34692761055676",
+        "lng": "1.56005859375"
+      },
+      "id": 98443201
+    },
+    {
+      "cityName": "Dourdan",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2025-10-13T09:28:40.457Z",
+      "notes": "",
+      "position": {
+        "lat": "48.545705491847464",
+        "lng": "1.9775390625000002"
+      },
+      "id": 98443202
+    },
+    {
+      "cityName": "Ampthill",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "emoji": "🇬🇧",
+      "date": "2025-10-13T09:28:42.964Z",
+      "notes": "",
+      "position": {
+        "lat": "52.02545860348814",
+        "lng": "-0.5053710937500001"
+      },
+      "id": 98443203
     }
   ]
 }
