@@ -20,7 +20,7 @@ export default function Login() {
 
   useEffect(
     function () {
-      if (isAuthenticated) navigate("/app", { replace: true });
+      if (isAuthenticated) navigate("/app", { replace: true }); // Once login happens, it will replace the last history to app
     },
     [isAuthenticated, navigate]
   );
